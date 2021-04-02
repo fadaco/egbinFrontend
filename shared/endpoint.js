@@ -1,3 +1,4 @@
+
 export const ApiEndpoints = {
     LOGIN: 'user/login',
     FETCH_ALL_SICK_LEAVE: 'leave-request',
