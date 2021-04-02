@@ -36,7 +36,7 @@ const Alayout = (props) => {
                                 <a>Staff</a>
                             </Link>
                             </li>}
-                        <li style={{margin: '30px 0', cursor: 'pointer'}} onClick={() => logout()}>Logout</li>
+                        <li style={{margin: '30px 0', cursor: 'pointer'}} onClick={logout}>Logout</li>
                     </ul>
                 </div>
                 <div>{props.children}</div>
