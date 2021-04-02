@@ -12,10 +12,22 @@ const Staff = (props) => {
     password:"password"
   })
   const [edit, setEdit] = useState(false)
+  const [error, setError] = useState(null)
+
+
 
   useEffect(() => {
     props.fetchAllStaff()
   }, [])
+
+  useEffect(() => {
+        if(props.user_response.status === 201) {
+          setError(props.user_response.message)
+          props.fetchAllStaff()
+        } else if (props.user_response.status === 400 || props.user_response.status === 403) {
+          setError(props.user_response.message)
+    }
+  }, [props.user_response])
 
   const mapDataToForm = (e, key) => {
      setData({
@@ -106,6 +118,7 @@ const Staff = (props) => {
         </button>
       </div>
       <div className="modal-body">
+      <div style={{textAlign: 'center', fontWeight: 'bold', color: 'tomato'}}>{error}</div>
 
       <div>
             <label>Staff Id</label>

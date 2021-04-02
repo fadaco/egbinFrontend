@@ -1,8 +1,9 @@
-import {LOGIN, GET_ALL_STAFF} from '../actiontypes';
+import {LOGIN, GET_ALL_STAFF, ADD_NEW_STAFF, EDIT_STAFF, DELETE_STAFF} from '../actiontypes';
 
 const INIT_VALUES = {
   user: {},
-  staff: {}
+  staff: {},
+  user_response: {}
 }
 
 const UserReducer = (state = INIT_VALUES, action) => {
@@ -17,6 +18,21 @@ const UserReducer = (state = INIT_VALUES, action) => {
                 ...state,
                 staff: {...action.payload}
             }
+            case ADD_NEW_STAFF:
+                return {
+                    ...state,
+                    user_response: {...action.payload}
+                }
+           case EDIT_STAFF:
+                    return {
+                        ...state,
+                        user_response: {...action.payload}
+                    }
+          case DELETE_STAFF:
+                        return {
+                            ...state,
+                            user_response: {...action.payload}
+                        }
         default:
             return state;
     }
