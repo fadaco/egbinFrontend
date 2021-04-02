@@ -34,7 +34,7 @@ const Dashboard = (props) => {
         setError(props.leave_request_response.message)
         loadData()
 
-       } else if (props.leave_request_response.status === 400) {
+       } else if (props.leave_request_response.status === 400 || props.leave_request_response.status === 403) {
              setError(props.leave_request_response.message)
        }
 
