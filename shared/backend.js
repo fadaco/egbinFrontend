@@ -1,5 +1,6 @@
 import axios from 'axios'
-export const BASE_URL = 'http://127.0.0.1:5500/api/';
+//export const BASE_URL = 'http://127.0.0.1:5500/api/';
+export const BASE_URL = 'https://egbinbackend.herokuapp.com/api/'
 import Cookies from 'js-cookie'
 
 export const SAVE_TOKEN = (key, value) => {

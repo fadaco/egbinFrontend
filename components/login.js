@@ -33,10 +33,10 @@ const Login = (props) => {
      })
     }
     return (
-        <div>
-            <input type="text" onChange={(val) => mapItemToData(val, 'staff_id')} className="form-control mb-3" placeholder="Enter Staff Id"/>
-            <input type="password" onChange={(val) => mapItemToData(val, 'password')}  className="form-control mb-3" placeholder="Enter Password"/>
-            <button className="btn btn-primary" onClick={goToDashboard}>Submit</button>
+        <div style={{width: '40%', margin: '100px auto'}}>
+            <input style={{margin: '10px 0'}} type="text" onChange={(val) => mapItemToData(val, 'staff_id')} className="form-control mb-3" placeholder="Enter Staff Id"/>
+            <input  style={{margin: '10px 0'}} type="password" onChange={(val) => mapItemToData(val, 'password')}  className="form-control mb-3" placeholder="Enter Password"/>
+            <button style={{width: '100%'}} className="btn btn-primary" onClick={goToDashboard}>Submit</button>
         </div>
     )
 }
