@@ -2,8 +2,17 @@ import Head from 'next/head'
 import Link from 'next/link'
 import {GET_TOKEN} from '../../shared/backend'
 import Cookies from 'js-cookie'
+import {useRouter} from 'next/router'
 
 const Alayout = (props) => {
+    const router = useRouter()
+
+
+    const logout = () => {
+        Cookies.remove('token')
+        Cookies.remove('user')
+        router.push('/')
+    }
     return (
         <div>
              <Head>
@@ -27,7 +36,7 @@ const Alayout = (props) => {
                                 <a>Staff</a>
                             </Link>
                             </li>}
-                        <li style={{margin: '30px 0'}}>Logout</li>
+                        <li style={{margin: '30px 0'}} onClick={() => logout()}>Logout</li>
                     </ul>
                 </div>
                 <div>{props.children}</div>
