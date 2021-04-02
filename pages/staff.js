@@ -59,8 +59,6 @@ const Staff = (props) => {
     props.staff.data.slice(index, 1)
 
   }
-
-
     return (
         <Alayout>
             <div style={{margin: '20px'}}>
