@@ -1,10 +1,14 @@
 import {SERVER_REQUEST} from '../../shared/backend'
 import {ApiEndpoints} from '../../shared/endpoint'
-import {LOGIN, GET_ALL_STAFF, ADD_NEW_STAFF, EDIT_STAFF, DELETE_STAFF} from '../actiontypes'
+import {LOGIN, GET_ALL_STAFF, ADD_NEW_STAFF, EDIT_STAFF, DELETE_STAFF, CLEAR_USER} from '../actiontypes'
 
 export const loginUser = (data) => async(dispatch) => {
     const response = await SERVER_REQUEST(ApiEndpoints.LOGIN, 'post', data)
     dispatch({type: LOGIN, payload: response})
+}
+
+export const clearuserstatus = () => async (dispatch) => {
+    dispatch({type: CLEAR_USER})
 }
 
 export const fetchAllStaff = () => async (dispatch) => {

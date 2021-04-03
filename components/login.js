@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import {useRouter} from 'next/router'
 import {connect} from 'react-redux'
 import {SAVE_TOKEN} from '../shared/backend'
-import {loginUser} from '../store/actions'
+import {loginUser, clearuserstatus} from '../store/actions'
 
 const Login = (props) => {
     const router = useRouter()
@@ -13,10 +13,14 @@ const Login = (props) => {
     })
 
     useEffect(() => {
+       props.clearuserstatus()
+    }, [])
+
+    useEffect(() => {
       if (props.user.status === 200) {
           SAVE_TOKEN('token', props.user.data.token)
           SAVE_TOKEN('user', props.user.data.staff_id)
-          router.push('/')
+          router.push('/dashboard')
       }
     }, [props.user])
     
@@ -44,7 +48,8 @@ const Login = (props) => {
 const mapStateToProps = state => state.userReducer
 
 const mapDispatchToProps = {
-    loginUser
+    loginUser,
+    clearuserstatus
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -9,9 +9,10 @@ const Alayout = (props) => {
 
 
     const logout =  () => {
+        router.push('/')
          Cookies.remove('token', { path: '', domain: 'https://egbinfrontend.vercel.app' })
         Cookies.remove('user', { path: '', domain: 'https://egbinfrontend.vercel.app' })
-        router.push('/')
+       
     }
     return (
         <div>

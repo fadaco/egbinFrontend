@@ -1,4 +1,4 @@
-import {LOGIN, GET_ALL_STAFF, ADD_NEW_STAFF, EDIT_STAFF, DELETE_STAFF} from '../actiontypes';
+import {LOGIN, GET_ALL_STAFF, ADD_NEW_STAFF, EDIT_STAFF, DELETE_STAFF, CLEAR_USER} from '../actiontypes';
 
 const INIT_VALUES = {
   user: {},
@@ -12,6 +12,11 @@ const UserReducer = (state = INIT_VALUES, action) => {
             return {
                 ...state,
                 user:{...action.payload}
+            }
+        case CLEAR_USER: 
+            return {
+                ...state,
+                user: {}
             }
         case GET_ALL_STAFF:
             return {
