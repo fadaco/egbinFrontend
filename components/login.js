@@ -16,7 +16,7 @@ const Login = (props) => {
       if (props.user.status === 200) {
           SAVE_TOKEN('token', props.user.data.token)
           SAVE_TOKEN('user', props.user.data.staff_id)
-          router.push('/dashboard')
+          router.push('/')
       }
     }, [props.user])
     
